@@ -1,8 +1,12 @@
+import { Box, Container } from "@chakra-ui/react";
+
 const Page = () => {
   return (
-    <div>
-      <p>Hello world</p>
-    </div>
+    <Container>
+      <Box>
+        <p>Hello World</p>
+      </Box>
+    </Container>
   );
 };
 
