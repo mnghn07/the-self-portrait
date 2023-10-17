@@ -21,16 +21,17 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
         aria-label="Options"
         icon={<HamburgerIcon />}
         size={"md"}
-        color={"#EEE"}
+        color={"#333"}
+        borderColor={"#333"}
         variant={"outline"}
         bg="none"
         _hover={{ bg: "none" }}
         _active={{ bg: "none" }}
       />
-      <MenuList bg={"#333"}>
+      <MenuList bg={"#EEE"}>
         {items.map((item, index) => (
-          <MenuItem key={index} bg="#333" color={"#333"}>
-            <Text fontWeight={"medium"} color="#EEE">
+          <MenuItem key={index} bg="#EEE" color={"#333"} borderColor={"#333"}>
+            <Text fontWeight={"medium"} color="#333">
               {item}
             </Text>
           </MenuItem>

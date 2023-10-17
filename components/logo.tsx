@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
 interface Props {
   className?: string;
@@ -9,18 +9,23 @@ interface Props {
 const Logo: React.FC<Props> = props => {
   return (
     <Link href="/">
-      <Box mb={20} display={"flex"} alignItems={"center"} gap={2}>
+      <Flex align={"center"} gap={2}>
         <Image
-          src="/images/logoipsum-290.svg"
+          src={"/images/logoipsum-290.svg"}
           alt="logo"
           width={50}
           height={50}
           {...props}
         />
-        <Text fontStyle={"italic"} fontWeight={"semibold"}>
+        <Text
+          as={"h2"}
+          fontStyle={"italic"}
+          fontWeight={"semibold"}
+          letterSpacing={"tight"}
+        >
           Lorem Ipsum
         </Text>
-      </Box>
+      </Flex>
     </Link>
   );
 };

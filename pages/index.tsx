@@ -1,15 +1,10 @@
 import { Box, Container, Text } from "@chakra-ui/react";
-import Logo from "@/components/logo";
-import Menu from "@/components/menu";
+import Navbar from "@/components/navbar";
 
 const Page = () => {
   return (
-    <Container maxW={"100%"} p={4}>
+    <Container maxW={"100%"} p={4} pt={20}>
       {/* Logo and menu */}
-      <Box display={"flex"} justifyContent={"space-between"}>
-        <Logo />
-        <Menu items={["One", "Two", "Three"]} />
-      </Box>
       <Box>
         <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
