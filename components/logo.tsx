@@ -9,7 +9,7 @@ interface Props {
 const Logo: React.FC<Props> = props => {
   return (
     <Link href="/">
-      <Flex align={"center"} gap={2}>
+      <Flex align={"center"} gap={2} mr={4}>
         <Image
           src={"/images/logoipsum-290.svg"}
           alt="logo"
