@@ -8,12 +8,11 @@ import {
   Text
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 
-interface MenuProps {
-  items: string[];
-}
+interface MenuProps {}
 
-const Menu: React.FC<MenuProps> = ({ items }) => {
+const Menu: React.FC<MenuProps> = props => {
   return (
     <MenuComponent>
       <MenuButton
@@ -25,17 +24,36 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
         borderColor={"#333"}
         variant={"outline"}
         bg="none"
-        _hover={{ bg: "none" }}
-        _active={{ bg: "none" }}
       />
       <MenuList bg={"#EEE"}>
-        {items.map((item, index) => (
-          <MenuItem key={index} bg="#EEE" color={"#333"} borderColor={"#333"}>
-            <Text fontWeight={"medium"} color="#333">
-              {item}
+        <NextLink href={"/"} passHref>
+          <MenuItem bg="#EEE" color={"#333"}>
+            <Text fontWeight="medium" color="#333">
+              About
             </Text>
           </MenuItem>
-        ))}
+        </NextLink>
+        <NextLink href={"/works"} passHref>
+          <MenuItem bg="#EEE" color={"#333"}>
+            <Text fontWeight="medium" color="#333">
+              Works
+            </Text>
+          </MenuItem>
+        </NextLink>
+        <NextLink href={"/posts"} passHref>
+          <MenuItem bg="#EEE" color={"#333"}>
+            <Text fontWeight="medium" color="#333">
+              Posts
+            </Text>
+          </MenuItem>
+        </NextLink>
+        <NextLink href={"/list-100"} passHref>
+          <MenuItem bg="#EEE" color={"#333"}>
+            <Text fontWeight="medium" color="#333">
+              List 100
+            </Text>
+          </MenuItem>
+        </NextLink>
       </MenuList>
     </MenuComponent>
   );

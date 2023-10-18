@@ -12,7 +12,9 @@ import {
   Flex
 } from "@chakra-ui/react";
 
-interface Props {}
+interface Props {
+  path: string;
+}
 
 const LinkItem = ({ href, path, children }: any) => {
   const active = path === href;
@@ -54,11 +56,23 @@ const Navbar: React.FC<Props> = props => {
         <Logo />
         <Stack
           direction={{ base: "column", md: "row" }}
-          display={"flex"}
+          display={{ base: "none", md: "flex" }}
           alignItems={"center"}
+          flexGrow={1}
+          mt={{ base: 4, md: 0 }}
         >
-          <Menu items={["One", "Two", "Three"]} />
+          <LinkItem href={"/works"} path={props.path}>
+            Works
+          </LinkItem>
+          <LinkItem href={"/posts"} path={props.path}>
+            Posts
+          </LinkItem>
+          <LinkItem href={"/list-100"} path={props.path}>
+            List 100
+          </LinkItem>
         </Stack>
+
+        <Menu />
       </Container>
     </Box>
   );
