@@ -9,26 +9,29 @@ import {
   Heading,
   useColorModeValue,
   Link,
-  Flex
+  Text
 } from "@chakra-ui/react";
 
 interface Props {
-  path: string;
+  path?: string;
 }
 
 const LinkItem = ({ href, path, children }: any) => {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
   return (
-    <NextLink href={href}>
-      <Link
-        p={2}
-        bg={active ? "gray" : undefined}
-        color={active ? "white" : inactiveColor}
-      >
-        {children}
-      </Link>
-    </NextLink>
+    <Link
+      as={NextLink}
+      p={2}
+      bg={active ? "gray" : undefined}
+      color={active ? "white" : inactiveColor}
+      href={href}
+      _hover={{
+        border: "none"
+      }}
+    >
+      {children}
+    </Link>
   );
 };
 
@@ -62,13 +65,19 @@ const Navbar: React.FC<Props> = props => {
           mt={{ base: 4, md: 0 }}
         >
           <LinkItem href={"/works"} path={props.path}>
-            Works
+            <Text fontWeight="medium" color="#333">
+              Works
+            </Text>
           </LinkItem>
           <LinkItem href={"/posts"} path={props.path}>
-            Posts
+            <Text fontWeight="medium" color="#333">
+              Posts
+            </Text>
           </LinkItem>
           <LinkItem href={"/list-100"} path={props.path}>
-            List 100
+            <Text fontWeight="medium" color="#333">
+              List 100
+            </Text>
           </LinkItem>
         </Stack>
 

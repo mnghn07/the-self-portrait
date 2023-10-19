@@ -5,6 +5,7 @@ import {
   MenuList,
   MenuItem,
   IconButton,
+  Link,
   Text
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
@@ -26,28 +27,28 @@ const Menu: React.FC<MenuProps> = props => {
         bg="none"
       />
       <MenuList bg={"#EEE"}>
-        <NextLink href={"/"} passHref>
+        <NextLink href={"/"}>
           <MenuItem bg="#EEE" color={"#333"}>
             <Text fontWeight="medium" color="#333">
               About
             </Text>
           </MenuItem>
         </NextLink>
-        <NextLink href={"/works"} passHref>
+        <NextLink href={"/works"}>
           <MenuItem bg="#EEE" color={"#333"}>
             <Text fontWeight="medium" color="#333">
               Works
             </Text>
           </MenuItem>
         </NextLink>
-        <NextLink href={"/posts"} passHref>
+        <NextLink href={"/posts"}>
           <MenuItem bg="#EEE" color={"#333"}>
             <Text fontWeight="medium" color="#333">
               Posts
             </Text>
           </MenuItem>
         </NextLink>
-        <NextLink href={"/list-100"} passHref>
+        <NextLink href={"/list-100"}>
           <MenuItem bg="#EEE" color={"#333"}>
             <Text fontWeight="medium" color="#333">
               List 100
