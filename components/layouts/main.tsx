@@ -14,16 +14,19 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ children, router }) => {
   return (
-    <Box maxW="100%" as="main" className={montserrat.className}>
+    <Container maxW="100%" className={montserrat.className}>
       <Head>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,shrink-to-fit=no"
+        />
         <title>Minh Nguyen - Homepage</title>
       </Head>
       <Container maxW="100%" p={0}>
         <Navbar />
         {children}
       </Container>
-    </Box>
+    </Container>
   );
 };
 

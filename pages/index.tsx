@@ -1,5 +1,4 @@
 import { Box, Container, Text } from "@chakra-ui/react";
-import Navbar from "@/components/navbar";
 
 const Page = () => {
   return (

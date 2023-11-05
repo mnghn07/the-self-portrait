@@ -9,8 +9,12 @@ import {
   Heading,
   useColorModeValue,
   Link,
-  Text
+  Text,
+  Icon,
+  Button,
+  useColorMode
 } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 interface Props {
   path?: string;
@@ -36,12 +40,12 @@ const LinkItem = ({ href, path, children }: any) => {
 };
 
 const Navbar: React.FC<Props> = props => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box
       as="nav"
       position={"fixed"}
       maxW={"100%"}
-      bg={useColorModeValue("#FFFFFF40", "#20202380")}
       top={0}
       left={0}
       right={0}
@@ -80,7 +84,13 @@ const Navbar: React.FC<Props> = props => {
             </Text>
           </LinkItem>
         </Stack>
-
+        <Button
+          onClick={toggleColorMode}
+          bg="none"
+          _hover={{ background: "#EEE" }}
+        >
+          <Icon as={colorMode === "dark" ? SunIcon : MoonIcon} />
+        </Button>
         <Menu />
       </Container>
     </Box>
