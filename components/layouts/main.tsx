@@ -1,5 +1,11 @@
 import Head from "next/head";
 import { Box, Container } from "@chakra-ui/react";
+import { Montserrat } from "next/font/google";
+import Navbar from "../navbar";
+
+const montserrat = Montserrat({
+  subsets: ["latin"]
+});
 
 interface MainProps {
   children: React.ReactNode;
@@ -8,20 +14,19 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ children, router }) => {
   return (
-    <Box maxW="100%" as="main">
+    <Container maxW="100%" className={montserrat.className}>
       <Head>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,shrink-to-fit=no"
+        />
         <title>Minh Nguyen - Homepage</title>
       </Head>
-      <Container
-        maxW="100%"
-        bg="blackAlpha.900"
-        color="whiteAlpha.900"
-        alignItems={"flex-end"}
-      >
+      <Container maxW="100%" p={0}>
+        <Navbar />
         {children}
       </Container>
-    </Box>
+    </Container>
   );
 };
 

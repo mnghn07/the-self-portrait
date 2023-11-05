@@ -1,10 +1,16 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
 
 const Page = () => {
   return (
-    <Container>
+    <Container maxW={"100%"} p={4} pt={20}>
+      {/* Logo and menu */}
       <Box>
-        <p>Hello World</p>
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        </Text>
+        <Text fontSize={"50px"} fontWeight={"bold"}>
+          Lorem Ipsum
+        </Text>
       </Box>
     </Container>
   );
