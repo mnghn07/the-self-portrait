@@ -84,14 +84,16 @@ const Navbar: React.FC<Props> = props => {
             </Text>
           </LinkItem>
         </Stack>
-        <Button
-          onClick={toggleColorMode}
-          bg="none"
-          _hover={{ background: "#EEE" }}
-        >
-          <Icon as={colorMode === "dark" ? SunIcon : MoonIcon} />
-        </Button>
-        <Menu />
+        <Stack direction={"row"} display={{ base: "flex", md: "flex" }}>
+          <Button
+            onClick={toggleColorMode}
+            bg="none"
+            _hover={{ background: "#EEE" }}
+          >
+            <Icon as={colorMode === "dark" ? SunIcon : MoonIcon} />
+          </Button>
+          <Menu />
+        </Stack>
       </Container>
     </Box>
   );

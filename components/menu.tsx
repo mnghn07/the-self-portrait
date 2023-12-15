@@ -17,7 +17,7 @@ const Menu: React.FC<MenuProps> = props => {
   const Item = ({ href, item }: any) => {
     return (
       <NextLink href={href}>
-        <MenuItem bg="#EEE" color={"#333"} _hover={{ background: "#EEE" }}>
+        <MenuItem bg="#EEE" color={"#333"} _hover={{ bg: "" }}>
           <Text fontWeight="medium" color="#333">
             {item}
           </Text>
