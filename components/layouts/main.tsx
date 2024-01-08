@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Container } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { Montserrat } from "next/font/google";
 import Navbar from "../navbar";
 
